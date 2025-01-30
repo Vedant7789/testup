@@ -9,6 +9,7 @@ import { api } from "../../../../convex/_generated/api";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import MeetingModal from "@/components/MeetingModal";
+import LoaderUI from "@/components/LoaderUi";
 
 
 export default function Home() {
@@ -29,10 +30,10 @@ export default function Home() {
         setModalType("start");
         setShowModal(true);
         break;
-        case "Join interview":
-          setModalType("join");
-          setShowModal(true);
-          break;
+      case "Join interview":
+        setModalType("join");
+        setShowModal(true);
+        break;
 
           default:
             router.push(`/${title.toLowerCase()}`);
@@ -41,7 +42,8 @@ export default function Home() {
 
     }
 
-  }
+  };
+  if (isLoading) return <LoaderUI/>;
   return (
     <div className="container max-w-7xl mx-auto p-6">
       <div className="rounded-lg bg-card p-6 border shawdow-sm mb-10">
