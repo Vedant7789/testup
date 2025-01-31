@@ -1,5 +1,7 @@
 "use client";
 
+
+
 import LoaderUI from "@/components/LoaderUi";
 import MeetingRoom from "@/components/MeetingRoom";
 import MeetingSetup from "@/components/MeetingSetUp";
@@ -12,7 +14,7 @@ import { useState } from "react";
 function MeetingPage() {
   const { id } = useParams();
   const { isLoaded } = useUser();
-  const { call, isCallLoading } = useGetCallById(id);
+  const { call, isCallLoading } = useGetCallById(id ?? "");
 
   const [isSetupComplete, setIsSetupComplete] = useState(false);
 

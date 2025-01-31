@@ -29,4 +29,4 @@ const useGetCallById = (id: string | string[]) => {
   return { call, isCallLoading };
 };
 
-export default useGetCallById
+export default useGetCallById;
